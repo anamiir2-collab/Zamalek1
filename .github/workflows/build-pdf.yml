@@ -1,1 +1,42 @@
-..
+name: Build PDF book
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install playwright pypdf
+          playwright install --with-deps chromium
+
+      - name: Build the PDF
+        run: python scripts/build_pdf.py
+
+      - name: Upload PDF artifact (downloadable for 90 days)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ZAMALEK_SC_COMPLETE_HISTORY_1911_2026
+          path: ZAMALEK_SC_COMPLETE_HISTORY_1911_2026.pdf
+          retention-days: 90
+
+      - name: Attach PDF to GitHub Release (on tags)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ZAMALEK_SC_COMPLETE_HISTORY_1911_2026.pdf
