@@ -266,6 +266,128 @@ a{ color:var(--red); }
   .t-caption .ltr{font-size:7.5px}
 }
 
+
+/* Local honours table: readable competition rows and season chips */
+.local-honours{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  table-layout:fixed;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#fff;
+  box-shadow:0 5px 18px rgba(31,24,25,.045);
+  margin:12px 0 16px;
+}
+.local-honours th{
+  padding:12px 13px;
+  background:#292027;
+  color:#fff;
+  font-size:11px;
+  line-height:1.5;
+  text-align:right;
+}
+.local-honours th .th-en{
+  display:block;
+  margin-top:2px;
+  color:#d9bd70;
+  font:600 8px 'Montserrat',sans-serif;
+  direction:ltr;
+  text-align:right;
+}
+.local-honours td{
+  padding:12px 13px;
+  border-bottom:1px solid #eee9e3;
+  vertical-align:middle;
+  line-height:1.65;
+}
+.local-honours tbody tr:nth-child(even) td{background:#fbf9f6}
+.local-honours tbody tr:last-child td{border-bottom:0}
+.local-honours .competition-name{
+  width:29%;
+  color:var(--ink);
+  font-weight:800;
+  font-size:12px;
+}
+.local-honours .competition-name .ltr{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font:600 8px/1.5 'Montserrat',sans-serif;
+  direction:ltr;
+  text-align:right;
+}
+.local-honours td.num{
+  width:9%;
+  text-align:center;
+  white-space:nowrap;
+  color:#8f2031;
+  font:800 17px 'Montserrat',sans-serif;
+}
+.local-honours .season-list{width:62%}
+.season-chips{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:5px;
+}
+.season-chip{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 8px;
+  border:1px solid #eee4cf;
+  border-radius:6px;
+  background:#f8f4eb;
+  color:#51443a;
+  font:700 10px/1.4 'Tajawal',sans-serif;
+  white-space:nowrap;
+}
+.season-note{
+  margin-top:7px;
+  padding:6px 9px;
+  border-right:3px solid #c9a227;
+  border-radius:5px;
+  background:#f8f4eb;
+  color:#71634e;
+  font:500 10px/1.7 'Tajawal',sans-serif;
+}
+@media(max-width:650px){
+  .local-honours{display:block;border:0;border-radius:0;box-shadow:none;background:transparent}
+  .local-honours thead{display:none}
+  .local-honours tbody{display:grid;gap:10px}
+  .local-honours tbody tr{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:11px;
+    background:#fff;
+    box-shadow:0 3px 12px rgba(31,24,25,.04);
+  }
+  .local-honours tbody tr:nth-child(even) td{background:transparent}
+  .local-honours td{border:0;padding:10px 12px}
+  .local-honours td.competition-name{grid-column:1;grid-row:1;font-size:12px}
+  .local-honours td.num{
+    grid-column:2;grid-row:1;
+    min-width:42px;
+    margin:0 8px;
+    padding:6px 9px;
+    border-radius:8px;
+    background:#f8f0e9;
+    font-size:16px;
+  }
+  .local-honours td.season-list{
+    grid-column:1/-1;
+    width:auto;
+    padding:9px 12px 12px;
+    border-top:1px solid #f0ebe5;
+  }
+  .season-chips{gap:5px}
+  .season-chip{font-size:9.5px;padding:4px 7px}
+}
+
 </style>
 </head>
 <body>
@@ -625,7 +747,7 @@ a{ color:var(--red); }
 <p class="ar-p">بين عامي ١٩٨٤ و٢٠٠٢ عاش الزمالك أشهر حقبته القارية: خمسة ألقاب من <b>كأس الأندية الأبطال إفريقيا / African Cup of Champions Clubs</b> ثم <b>دوري أبطال إفريقيا / CAF Champions League</b>، صنعتها جيل تسمى لاحقًا «الجيل الذهبي» — أسماء اعتاد جمهور الزمالك أن ينطقها كقائمة قرآن رمزي: <b>جمال عبد الحميد</b> الكابتن الذي سجل هدفَي نهائي ١٩٨٤ ذهابًا في القاهرة، و<b>فاروق جعفر</b> قائد تلك الحملة الأولى، و<b>مجدي طلبة</b> صاحب الذكاء التكتيكي، و<b>إبراهيم يوسف</b> وحسام يكن وسامي الششيني في القلب، و<b>إيمانويل كوارشي</b> الغاني الذي صنع فارقًا في الصناعة، ثم جيل التسعينيات: <b>حسام يكن</b> قائد نهائي ١٩٩٣، و<b>إيمانويل أمونيكي</b> النيجيري، و<b>أيمن منصور</b> و<b>أشرف قاسم</b> و<b>إسماعيل يوسف</b> و<b>خالد الغندور</b> و<b>طارق مصطفى</b> والتوأم <b>حسام وإبراهيم حسن</b>، وفي المرمى <b>حسين السيد</b> ثم <b>نادر السيد</b>، وفوقهم هداف القمة <b>أحمد القص</b> وصانع الألعاب <b>حازم إمام</b>.</p>
 <p class="ar-p">وخلف هذا الجيل جلس مدراء صنعوا التاريخ: <b>محمود أبو رجيلة</b> قائد أول تاج إفريقي في ١٩٨٤، ثم الجنرال <b>محمود الجوهري</b> الذي حمل الكأس الثالثة في ١٩٩٣، و<b>فيرنر أولك</b> الألماني في ١٩٩٦، والبرازيلي <b>كابرالزينيو</b> في ٢٠٠٢. وجدير بالذكر أن ثالثة الألقاب عام ١٩٩٣ كانت ذات معنى مزدوج: فاز الزمالك على أشانتي كوتوكو الغاني بركلات الترجيح ٧-٦ بعد تعادل سلبي في المجموع، <b>ليحتفظ بكأس أحمد سيكو توري للأبد</b> كونه الفريق الثالث في تاريخ البطولة الذي يصل إلى ثلاثة ألقاب بعد هافيا الكوناكري وكانون ياوندي، وأول نادٍ مصري يحقق ذلك.</p>
 
-<div class="ttable">
+<table class="ttable local-honours">
   <thead><tr><th style="width:12%">السنة <span class="th-en">Year</span></th><th style="width:30%">المنافس <span class="th-en">Final opponent</span></th><th style="width:26%">النتيجة <span class="th-en">Result</span></th><th style="width:32%">المدرب <span class="th-en">Head coach</span></th></tr></thead>
   <tbody>
     <tr><td class="num">1984</td><td>شوتنج ستارز (نيجيريا) <span class="ltr">Shooting Stars</span></td><td>٣-٠ في المجموع (٢-٠ القاهرة، ١-٠ لاغوس)</td><td>محمود أبو رجيلة <span class="ltr">M. Abou-Regaila</span></td></tr>
@@ -633,8 +755,7 @@ a{ color:var(--red); }
     <tr><td class="num">1993</td><td>أشانتي كوتوكو (غانا) <span class="ltr">Asante Kotoko</span></td><td>٠-٠ في المجموع، ٧-٦ ركلات الترجيح</td><td>محمود الجوهري <span class="ltr">M. El-Gohary</span></td></tr>
     <tr><td class="num">1996</td><td>شوتنج ستارز (نيجيريا) <span class="ltr">Shooting Stars</span></td><td>٣-٣ في المجموع، ٥-٤ ركلات الترجيح</td><td>فيرنر أولك <span class="ltr">Werner Olk</span></td></tr>
     <tr><td class="num">2002</td><td>الرجاء الكازا بلانكي (المغرب) <span class="ltr">Raja CA</span></td><td>١-٠ في المجموع (٠-٠ الدار البيضاء، ١-٠ القاهرة)</td><td>كابرالزينيو <span class="ltr">Cabralzinho</span></td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 <div class="t-note">مصدر تفاصيل النهائيات: صفحات النهائيات الموثقة في ويكيبيديا الإنجليزية وتقارير الرابطة الإفريقية؛ لم يتوفر توثيق مؤكد لمدرب حملة ١٩٨٦ في المصادر التي طلبناها، ولذلك تُرك خانته فارغة عمدًا.</div>
 
 <div class="en-box">
@@ -652,7 +773,7 @@ a{ color:var(--red); }
 <p class="ar-p">بدأت المشاركات الإفريقية للزمالك عام ١٩٧٦ في كأس الكؤوس الإفريقية بعدما شارك بوصفه بطل كأس مصر، ووصل حينها إلى نصف النهائي. ثم بدأ رصيد الألقاب القارية يتراكم حتى بلغ <b>خمسة عشر لقبًا قاريًّا وإفروآسيويًّا</b>: خمسة دوري أبطال، واثنتان من كأس الكونفيدرالية الإفريقية / CAF Confederation Cup، وخمس من كأس السوبر الإفريقي / CAF Super Cup، وواحدة من كأس الكؤوس الإفريقية، واثنتان من كأس إفروآسيوية للأندية — وهو ما يجعل الزمالك، بحسب سجلات القرن العشرين، <b>النادي الوحيد الذي جمع تسعة ألقاب قارية قبل نهاية القرن العشرين</b>.</p>
 <p class="ar-p">وراء الأرقام قصص: نهائي ١٩٩٤ أمام الترجي التونسي الذي خسره الزمالك (١-٣ في المجموع) بعد عام احتفال؛ وكأس السوبر الأولى في ١٦ يناير ١٩٩٤ حين هزم الأهلي ١-٠ في أول سوبر إفريقي بين نادٍين مصريين؛ وكأس الكؤوس ٢٠٠٠ على حساب كانون ياوندي (٤-٣ في المجموع) بعد نهائي مثير ذهابًا وإيابًا؛ وسوبر ٢٠٠٣ أمام الوداد (٣-١ في ملعب القاهرة) بعد أيام من تويج دوري الأبطال الخامس؛ ثم حقبة الكونفيدرالية: أول لقب في ٢٠١٩ بعد تعادل ١-١ في المجموع مع نهضة بركان وحسم الركلات ٥-٣، ولاقب ثانٍ في موسم ٢٠٢٣-٢٤ أمام النادي المغربي نفسه بعد نهائي ذهاب وإياب تأجل انطلاقه بسبب نزاع القميص الشهير، ثم حسم إجمالي ٢-٢ بركلات ترجيح ٥-٣؛ وسوبر إفريقي خامس في الرياض في ٢٧ سبتمبر ٢٠٢٤ بعد ١-١ أمام الأهلي وركلات ترجيح ٤-٣ — أول سوبر إفريقي مصري خالص منذ ١٩٩٤. وفي المقابل تأتي الندمات الكبيرة: خسارة نهائيي ١٩٩٤ و٢٠١٦ و٢٠٢٠ (أمام ماميلودي صن داونز ثم الأهلي في الدوري الخالص في القاهرة)، ونهائي كأس الكونفيدرالية ٢٠٢٥-٢٦ أمام اتحاد العاصمة الجزائري (١-١ إجمالًا و٨-٧ ركلات الترجيح في مايو ٢٠٢٦).</p>
 
-<div class="ttable">
+<table class="ttable">
   <thead><tr><th style="width:34%">المسابقة <span class="th-en">Competition</span></th><th style="width:12%">العدد <span class="th-en">Titles</span></th><th style="width:54%">السنوات والنهائيات الموثقة <span class="th-en">Years &amp; verified finals</span></th></tr></thead>
   <tbody>
     <tr><td>دوري الأبطال / كأس الأندية الأبطلة <span class="ltr">CAF Champions League / African Cup of Champions Clubs</span></td><td class="num">5</td><td>١٩٨٤، ١٩٨٦، ١٩٩٣، ١٩٩٦، ٢٠٠٢ — وصيفًا ١٩٩٤، ٢٠١٦، ٢٠٢٠</td></tr>
@@ -660,8 +781,7 @@ a{ color:var(--red); }
     <tr><td>كأس الكؤوس الإفريقية <span class="ltr">African Cup Winners’ Cup</span></td><td class="num">1</td><td>٢٠٠٠ (كانون ياوندي، ٤-٣ إجماليًا)</td></tr>
     <tr><td>كأس السوبر الإفريقي <span class="ltr">CAF Super Cup</span></td><td class="num">5</td><td>١٩٩٤ (الأهلي ١-٠)، ١٩٩٧ (المقاولون العرب ٤-٢ ركلات)، ٢٠٠٣ (الوداد ٣-١)، ٢٠٢٠ (الترجي ٣-١)، ٢٠٢٤ (الأهلي ٤-٣ ركلات) — وصيفًا ٢٠٠١ (هارتس أوف أوك ٠-٢)</td></tr>
     <tr><td>كأس إفروآسيوية للأندية <span class="ltr">Afro-Asian Club Championship</span></td><td class="num">2</td><td>١٩٨٧، ١٩٩٧ — وصيفًا ١٩٩٤</td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 
 <div class="en-box">
   <span class="en-label">English summary</span>
@@ -693,7 +813,7 @@ a{ color:var(--red); }
 <p class="ar-p">في ٩ فبراير ١٩١٧ التقى الناديان لأول مرة — فاز الأهلي ١-٠ في مباراة ودية وفق توثيق صفحة الديربي — ومنذ ذلك اليوم صار كل مواجهة بينهما حدثًا وطنيًّا يتجاوز الرياضة. وبحسب إحصاءات صفحة <b>«ديربي القاهرة»</b> في ويكيبيديا الإنجليزية (الموثقة حتى تاريخ إعداد هذا الكتاب)، لعب الفريقان <b>٢٣٣ مباراة رسمية</b>: فاز الأهلي في ١١٣ وتعادلا في ٧٩ وفاز الزمالك في ٦٢ — ونُسب هذا الإحصاء صراحةً إلى مصدره لأن أرقام الديربي تختلف من مرجع إلى آخر باختلاف ما يُحتسب «رسميًّا». وفي مقابلات كأس السوبر الإفريقي وفي كل نهائي مشترك، لم تختلف القصة: القاهرة تنقسم أسبوعًا كاملًا.</p>
 <p class="ar-p">أشهر لحظات الديربي في عين الزمالك: <b>٦-٠ مرتين</b> — في بطولة القاهرة يوم ٢ يناير ١٩٤٢ وفي نهائي كأس مصر يوم ٢ يونيو ١٩٤٤ (اللاعبون الأوائل للتسجيل في الديربي حسب المصادر: صادق فهمي صاحب أول «هاتريك» ودّي عام ١٩٢٣، و<b>عبد الكريم سكر</b> هداف الديربي التاريخي بـ١٩ هدفًا)؛ ونهائيات كأس مصر ١٩٥٢ (٢-٠) و١٩٥٩ (٢-١)؛ ونهائي دوري أبطال إفريقيا ٢٠٢٠ الخالص المصري (٢٧ نوفمبر، خسره الزمالك ١-٢)؛ وسوبر إفريقي ١٩٩٤ (١-٠) و٢٠٢٤ (١-١ و٤-٣ ركلات الترجيح في الرياض) التي جمعت الناديين في نفس النهائي القاري للمرة الثالثة؛ ومواسم قمة الزمالك الأخيرة: فوز ٣-٠ في الدوري ٢٠٢٤-٢٥، ثم خسارتا ٢٠٢٥-٢٦، ومباراة ١١ أكتوبر ٢٠٢٦ التي خسرها الزمالك ٠-٢.</p>
 
-<div class="ttable">
+<table class="ttable">
   <thead><tr><th style="width:22%">التاريخ <span class="th-en">Date</span></th><th style="width:40%">المواجهة <span class="th-en">Occasion</span></th><th style="width:38%">النتيجة <span class="th-en">Score</span></th></tr></thead>
   <tbody>
     <tr><td class="num">09.02.1917</td><td>أول لقاء بين الناديين (ودي — وفق توثيق صفحة الديربي)</td><td>الأهلي ١-٠</td></tr>
@@ -703,8 +823,7 @@ a{ color:var(--red); }
     <tr><td class="num">27.11.2020</td><td>نهائي دوري أبطال إفريقيا (القاهرة)</td><td>الأهلي ٢-١</td></tr>
     <tr><td class="num">27.09.2024</td><td>نهائي كأس السوبر الإفريقي (الرياض)</td><td>١-١، الزمالك ٤-٣ ركلات الترجيح</td></tr>
     <tr><td class="num">11.10.2026</td><td>القمة الـ١٣٣ في الدوري (استاد القاهرة)</td><td>الأهلي ٢-٠</td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 <div class="t-note">الأرقام الإجمالية للديربي (٢٣٣ مباراة — ١١٣ فوزًا للأهلي — ٧٩ تعادلًا — ٦٢ للزمالك) منسوبة إلى صفحة «ديربي القاهرة» بويكيبيديا الإنجليزية بتاريخ إعداد الكتاب، مع الإشارة إلى أن بعض المراجع تُحتسب بها مباريات أخرى كرسمية.</div>
 
 <div class="en-box">
@@ -1631,7 +1750,7 @@ a{ color:var(--red); }
 <p class="ar-p">تُصنَّف البطولات التالية بحسب طبيعتها: محلية، ثم قارية، ثم عربية وإقليمية، مع فصل المسابقات الودية والموسمية عن سجل الألقاب الرسمية. وتختلف بعض الإحصاءات في الإجمالي بحسب إدراج البطولات القديمة والودية أو احتساب الألقاب المشتركة؛ لذلك يعرض هذا السجل المسابقات وسنوات الفوز كلًّا على حدة بدل الاكتفاء برقم مجمل. وتُظهر المراجع الحديثة تتويج الزمالك بالدوري المصري موسم ٢٠٢٥-٢٦ ليصبح رصيده ١٥ لقبًا، إلى جانب ٢٩ لقبًا في كأس مصر وفق القوائم التي تحتسب اللقبين المشتركين.</p>
 
 <div class="t-caption">١ — البطولات المحلية الرسمية / Domestic official titles</div>
-<div class="ttable">
+<table class="ttable">
   <thead><tr><th style="width:36%">المسابقة <span class="th-en">Competition</span></th><th style="width:10%">العدد <span class="th-en">No.</span></th><th style="width:54%">السنوات <span class="th-en">Seasons</span></th></tr></thead>
   <tbody>
     <tr><td>الدوري المصري الممتاز <span class="ltr">Egyptian Premier League</span></td><td class="num">15</td><td>١٩٥٩-٦٠، ١٩٦٣-٦٤، ١٩٦٤-٦٥، ١٩٧٧-٧٨، ١٩٨٣-٨٤، ١٩٨٧-٨٨، ١٩٩١-٩٢، ١٩٩٢-٩٣، ٢٠٠٠-٠١، ٢٠٠٢-٠٣، ٢٠٠٣-٠٤، ٢٠١٤-١٥، ٢٠٢٠-٢١، ٢٠٢١-٢٢، ٢٠٢٥-٢٦</td></tr>
@@ -1649,12 +1768,11 @@ a{ color:var(--red); }
     <tr><td>كأس التحدي بولانكي <span class="ltr">Bolanchi Challenge Cup</span></td><td class="num">1</td><td>١٩١٣</td></tr>
     <tr><td>بطولة «الحب الرسمي» <span class="ltr">Official Love Tournament</span></td><td class="num">1</td><td>١٩٩٩</td></tr>
     <tr><td>كأس الصداقة المصرية الجزائرية <span class="ltr">Egyptian-Algerian Friendship Cup</span></td><td class="num">1</td><td>٢٠١٤</td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 <div class="t-note">* لقبان من كأس مصر (١٩٤٢-٤٣ و١٩٥٧-٥٨) سُجّلا في قائمة ألقاب النادي «بالتشارك مع الأهلي» وفق ويكيبيديا الإنجليزية؛ وهناك اختلاف طفيف بين المصادر في عدّ إجمالي الكأس (٢٨ أو ٢٩) نودّ توثيقه بدل حسمه بلا دليل.</div>
 
 <div class="t-caption">٢ — البطولات القارية <span class="ltr">African titles</span></div>
-<div class="ttable">
+<table class="ttable">
   <thead><tr><th style="width:36%">المسابقة <span class="th-en">Competition</span></th><th style="width:10%">العدد <span class="th-en">No.</span></th><th style="width:54%">السنوات والنهائيات <span class="th-en">Years &amp; finals</span></th></tr></thead>
   <tbody>
     <tr><td>دوري أبطال إفريقيا / كأس الأندية الأبطلة <span class="ltr">CAF CL / African Champions’ Cup</span></td><td class="num">5</td><td>١٩٨٤ (شوتنج ستارز ٣-٠)، ١٩٨٦ (أفريقيا سبورت ٤-٢ ركلات)، ١٩٩٣ (كوتوكو ٧-٦ ركلات — احتفاظ بكأس سيكو توري)، ١٩٩٦ (شوتنج ستارز ٥-٤ ركلات)، ٢٠٠٢ (الرجاء ١-٠)</td></tr>
@@ -1662,11 +1780,10 @@ a{ color:var(--red); }
     <tr><td>كأس الكؤوس الإفريقية <span class="ltr">African Cup Winners’ Cup</span></td><td class="num">1</td><td>٢٠٠٠ (كانون ياوندي ٤-٣ إجماليًا)</td></tr>
     <tr><td>كأس السوبر الإفريقي <span class="ltr">CAF Super Cup</span></td><td class="num">5</td><td>١٩٩٤ (الأهلي ١-٠)، ١٩٩٧ (المقاولون العرب ٤-٢ ركلات)، ٢٠٠٣ (الوداد ٣-١)، ٢٠٢٠ (الترجي ٣-١)، ٢٠٢٤ (الأهلي ٤-٣ ركلات)</td></tr>
     <tr><td>كأس إفروآسيوية للأندية <span class="ltr">Afro-Asian Club Championship</span></td><td class="num">2</td><td>١٩٨٧، ١٩٩٧</td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 
 <div class="t-caption">٣ — البطولات العربية والإقليمية <span class="ltr">Arab &amp; regional titles</span></div>
-<div class="ttable">
+<table class="ttable">
   <thead><tr><th style="width:36%">المسابقة <span class="th-en">Competition</span></th><th style="width:10%">العدد <span class="th-en">No.</span></th><th style="width:54%">السنوات <span class="th-en">Years</span></th></tr></thead>
   <tbody>
     <tr><td>بطولة الأندية العربية <span class="ltr">Arab Club Champions Cup</span></td><td class="num">1</td><td>٢٠٠٣</td></tr>
@@ -1675,8 +1792,7 @@ a{ color:var(--red); }
     <tr><td>كأس التحدي الدولي <span class="ltr">Friendship International Cup</span></td><td class="num">2</td><td>١٩٧٠، ١٩٨٨</td></tr>
     <tr><td>كأس الاستقلال <span class="ltr">Independence Cup</span></td><td class="num">2</td><td>١٩٨٧، ١٩٨٨</td></tr>
     <tr><td>كأس تحدي دبي <span class="ltr">Dubai Challenge Cup</span></td><td class="num">1</td><td>٢٠٢٤</td></tr>
-  </tbody>
-</div>
+  </tbody></table>
 
 <p class="ar-p">وتجدر الإشارة إلى أن هذه التصنيفات ليست مجاملة: البطولات الودية والموسمية (كأس التلفزيون، الدوريات الصيفية، كؤوس التحدي) أُدرجت في قسمها المستقل حتى لا تُضخّم رصيد «الرسمي»، وهذا تحديدًا ما يميز قاعدة البيانات المهنية عن الإحصاء العاطفي. كما يُنصح القارئ دائمًا — عند المقارنة مع أي مرجع آخر — بمراجعة سنوات الألقاب نفسها، فهي الوثيقة الحقيقية لا الأعداد المجملة.</p>
 
