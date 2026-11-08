@@ -132,6 +132,33 @@ body{ font-family:'Noto Naskh Arabic', serif; font-size:15.5px; line-height:1.95
 .years-toc a{ display:block; font-family:'Tajawal', sans-serif; font-weight:500; font-size:11.5px; color:var(--ink-soft); text-decoration:none; padding:1.5px 0; border-bottom:1px dotted var(--line); }
 .years-toc a:hover{ color:var(--red); }
 .years-toc .y-num{ font-family:'Montserrat', sans-serif; font-weight:700; direction:ltr; unicode-bidi:isolate; color:var(--red); }
+/* ---------- Trophy cabinet visual system ---------- */
+.trophy-intro{background:linear-gradient(135deg,#171A21 0%,#292d36 72%,#3a2025 100%);color:#fff;border:1px solid rgba(201,162,39,.45);border-radius:16px;padding:20px 22px;margin:16px 0 18px;position:relative;overflow:hidden;break-inside:avoid}
+.trophy-intro:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(201,162,39,.18);border-radius:50%;left:-55px;top:-90px;box-shadow:0 0 0 18px rgba(201,162,39,.035),0 0 0 38px rgba(201,162,39,.025)}
+.trophy-intro .ti-kicker{font:700 9px 'Montserrat',sans-serif;letter-spacing:.2em;color:var(--gold-soft);direction:ltr;text-align:right}
+.trophy-intro .ti-title{font:700 23px 'Amiri',serif;color:#fff;margin:5px 0}
+.trophy-intro .ti-copy{font:500 11px 'Tajawal',sans-serif;color:#d8d9dd;line-height:1.8;max-width:620px}
+.trophy-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:14px 0 20px}
+.trophy-stat{background:linear-gradient(180deg,#fff,#f7f4ee);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:10px;padding:10px 12px;text-align:center;break-inside:avoid}
+.trophy-stat .ts-n{font:800 25px 'Montserrat',sans-serif;color:var(--red);direction:ltr}
+.trophy-stat .ts-label{font:700 10px 'Tajawal',sans-serif;color:var(--ink);margin-top:2px}
+.trophy-stat .ts-en{font:500 7px 'Montserrat',sans-serif;color:var(--muted);letter-spacing:.08em;direction:ltr}
+.t-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;background:linear-gradient(90deg,rgba(155,31,45,.10),rgba(201,162,39,.09));border-right:4px solid var(--red);border-radius:7px;padding:9px 12px;margin:22px 0 8px;font-size:13px}
+.t-caption .ltr{font:600 8px 'Montserrat',sans-serif;letter-spacing:.08em;color:var(--muted)}
+.ttable{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 14px;background:#fff}
+.ttable th{padding:10px 11px}
+.ttable td{padding:9px 11px;line-height:1.75}
+.ttable td.num{font-size:14px;white-space:nowrap}
+.t-note{background:#f7f4ee;border-right:3px solid var(--gold);border-radius:6px;padding:9px 11px;line-height:1.8;margin:8px 0 16px}
+@media(max-width:600px){
+ .trophy-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .trophy-intro{padding:16px}
+ .trophy-intro .ti-title{font-size:20px}
+ .ttable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .ttable table{min-width:620px}
+ .ttable th,.ttable td{padding:8px}
+ .t-caption{align-items:flex-start;flex-direction:column}
+}
 /* ---------- Tables ---------- */
 .ttable{ width:100%; border-collapse:collapse; margin:12px 0; font-family:'Cairo', sans-serif; font-size:12px; }
 .ttable thead{ display:table-header-group; }
@@ -1529,7 +1556,20 @@ a{ color:var(--red); }
   <div class="divider"></div>
 </div>
 
-<p class="ar-p">تُصنَّف هنا كل بطولة موثقة وفق طبيعتها: رسمية محلية، ثم قارية، ثم عربية وإقليمية، ثم بطولات ودية أو موسمية أخرى — لأن الخلط بينها هو أول خطأ يرتكبه أي إحصاء سريع. الإجمالي الذي يعلنه الموقع الرسمي للنادي هو <b>٨١ بطولة</b> بين محلية وقارية وإقليمية؛ والاختلافات الطفيفة بين هذا العدد وأعداد موسوعات أخرى سببها تسجيل البطولات الودية والموسمية أو لا تسجيلها، ونؤكد هنا على ما هو موثق بالسنين لا على الأرقام الشعبية.</p>
+<div class="trophy-intro">
+  <div class="ti-kicker">ZAMALEK SC · HONOURS ARCHIVE · 1911–2026</div>
+  <div class="ti-title">ذاكرة البطولات… بالأرقام والسنوات</div>
+  <div class="ti-copy">خزانة الزمالك ليست رقمًا إجماليًا فقط؛ إنها سجل من المواسم والنهائيات. جُمعت الألقاب في أقسام واضحة تفصل البطولات الرسمية عن المسابقات الإقليمية والودية، مع إظهار سنوات التتويج لتسهيل المراجعة والمقارنة.</div>
+</div>
+<div class="trophy-stats">
+  <div class="trophy-stat"><div class="ts-n">15</div><div class="ts-label">الدوري المصري</div><div class="ts-en">EGYPTIAN PREMIER LEAGUE</div></div>
+  <div class="trophy-stat"><div class="ts-n">29</div><div class="ts-label">كأس مصر</div><div class="ts-en">EGYPT CUP</div></div>
+  <div class="trophy-stat"><div class="ts-n">5</div><div class="ts-label">دوري أبطال إفريقيا</div><div class="ts-en">CAF CHAMPIONS LEAGUE</div></div>
+  <div class="trophy-stat"><div class="ts-n">2</div><div class="ts-label">الكونفيدرالية الإفريقية</div><div class="ts-en">CAF CONFEDERATION CUP</div></div>
+  <div class="trophy-stat"><div class="ts-n">5</div><div class="ts-label">السوبر الإفريقي</div><div class="ts-en">CAF SUPER CUP</div></div>
+  <div class="trophy-stat"><div class="ts-n">2</div><div class="ts-label">الكأس الأفروآسيوية</div><div class="ts-en">AFRO-ASIAN CUP</div></div>
+</div>
+<p class="ar-p">تُصنَّف البطولات التالية بحسب طبيعتها: محلية، ثم قارية، ثم عربية وإقليمية، مع فصل المسابقات الودية والموسمية عن سجل الألقاب الرسمية. وتختلف بعض الإحصاءات في الإجمالي بحسب إدراج البطولات القديمة والودية أو احتساب الألقاب المشتركة؛ لذلك يعرض هذا السجل المسابقات وسنوات الفوز كلًّا على حدة بدل الاكتفاء برقم مجمل. وتُظهر المراجع الحديثة تتويج الزمالك بالدوري المصري موسم ٢٠٢٥-٢٦ ليصبح رصيده ١٥ لقبًا، إلى جانب ٢٩ لقبًا في كأس مصر وفق القوائم التي تحتسب اللقبين المشتركين.</p>
 
 <div class="t-caption">١ — البطولات المحلية الرسمية / Domestic official titles</div>
 <div class="ttable">
