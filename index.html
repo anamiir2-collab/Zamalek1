@@ -207,6 +207,65 @@ a{ color:var(--red); }
 .ref-list .r-t{ font-weight:800; color:var(--ink); }
 .ref-list .r-u{ direction:ltr; unicode-bidi:isolate; font-family:'Montserrat', sans-serif; font-size:10px; color:var(--muted); display:block; }
 .section-tag{ font-family:'Tajawal', sans-serif; font-weight:800; font-size:12px; color:var(--red); margin-top:22px; break-after:avoid; }
+
+/* Trophy archive — clear hierarchy for every subsection heading */
+.t-caption{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  min-height:54px;
+  margin:26px 0 12px;
+  padding:11px 16px 11px 18px;
+  overflow:hidden;
+  color:#fff;
+  background:linear-gradient(105deg,#241b20 0%,#541d2a 58%,#762332 100%);
+  border:1px solid rgba(201,162,39,.42);
+  border-right:5px solid #c9a227;
+  border-radius:12px;
+  box-shadow:0 5px 14px rgba(35,20,25,.10);
+  font-family:'Tajawal',sans-serif;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.55;
+  break-after:avoid;
+}
+.t-caption:after{
+  content:"";
+  position:absolute;
+  left:-22px;
+  top:-34px;
+  width:112px;
+  height:112px;
+  border:1px solid rgba(220,184,91,.20);
+  border-radius:50%;
+  box-shadow:0 0 0 10px rgba(220,184,91,.035),0 0 0 22px rgba(220,184,91,.025);
+  pointer-events:none;
+}
+.t-caption .ltr{
+  display:block;
+  margin-top:3px;
+  color:#e0c77f;
+  font:600 8px/1.5 'Montserrat',sans-serif;
+  letter-spacing:.11em;
+  direction:ltr;
+  text-align:right;
+  opacity:.95;
+}
+@media(max-width:600px){
+  .t-caption{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:2px;
+    min-height:0;
+    margin:20px 0 10px;
+    padding:10px 13px;
+    font-size:13px;
+  }
+  .t-caption .ltr{font-size:7.5px}
+}
+
 </style>
 </head>
 <body>
